@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Active Tab URL</title>
+  </head>
+  <body>
+    <h1>Active URL:</h1>
+    <div id="url"></div>
+    <script>
+      fetch('http://localhost:5000/get_url')
+        .then(response => response.text())
+        .then(url => {
+          document.getElementById('url').innerText = url;
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Active Tab URL Tracker",
+    "description": "Track the active URL of the tab you're using.",
+    "version": "1.0",
+    "permissions": ["tabs", "http://localhost:5000/"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}
